@@ -32,7 +32,7 @@ public static class Program
         {
             case Command.New:
             {
-                string templateName = cmds.Length == 0 ? "default" : cmds[0];
+                string templateName = cmds.Length == 0 || cmds[0].StartsWith('-') ? "default" : cmds[0];
                 CreateProject(templateName, 
                     FindParameter(cmds, "-n", "--name"),
                     FindParameter(cmds, "-s", "--std"),
